@@ -14,12 +14,13 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->id();// Primary Key
+            $table->id(); // primary key
             $table->string('Judul');
-            $table->timestamps();
             $table->date('PublishDate');
-            $table->string('Author');
-            $table->integer('stock');
+            $table->integer('Stock');
+            $table->string('Penulis');
+            $table->string('image');
+            $table->timestamps();
         });
     }
 
@@ -33,3 +34,6 @@ class CreateBooksTable extends Migration
         Schema::dropIfExists('books');
     }
 }
+
+// ctrl + ` => buka 1 terminal
+// ctrl + shift + ` => nambah terminal
